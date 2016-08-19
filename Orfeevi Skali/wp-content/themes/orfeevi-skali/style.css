@@ -1,0 +1,2055 @@
+/*
+Theme Name: Orfeevi Skali
+Theme URI: http://underscores.me/
+Author: Ivan Dimov
+Author URI: http://google.com
+Description: Custom Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: orfeevi-skali
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Orfeevi Skali is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+
+
+
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+/*=========================================================== MY STYLES* ========================================================/
+/*============================
+=========== Reset ============
+============================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	text-decoration:none;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Josefin Sans', sans-serif !important;
+	color: #515151;
+}
+
+body{
+	box-sizing: border-box !important;
+-moz-box-sizing: border-box !important;
+}
+/*============================
+========= PAGES COVER ========
+============================*/
+#cover,
+#hotel-cover,
+#mehana-cover,
+#prices-cover,
+#contact-cover{
+	height: 670px;
+	background-size: cover !important;
+	text-align: center;
+	position: relative;
+}
+#cover div,
+#hotel-cover div,
+#mehana-cover div,
+#prices-cover div,
+#contact-cover div{
+	position: relative;
+	top: 40%;
+}
+#cover h2,
+#hotel-cover h2,
+#mehana-cover h2,
+#prices-cover h2,
+#contact-cover h2{
+	color: white;
+	font-size: 42px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: -1px 0 #04818c, 0 1px #04818c, 1px 0 #04818c, 0 -1px #04818c;
+}
+#hotel-cover p,
+#prices-cover p,
+#contact-cover p{
+	color: white;
+	font-size: 22px;
+	margin-bottom: 40px;
+	text-shadow: -1px 0 #04818c, 0 1px #04818c, 1px 0 #04818c, 0 -1px #04818c;
+}
+#hotel-cover i,
+#mehana-cover i{
+	font-size: 34px;
+	color: white;
+	text-shadow: -1px 0 #04818c, 0 1px #04818c, 1px 0 #04818c, 0 -1px #04818c;
+}
+
+/*============================
+========= PAGES H2 ==========
+============================*/
+/* Index */
+#chooseUs h2,
+#home-food h2,
+#home-hotel-desc h2,
+/* Hotel Page */
+#hotel-about-us h2,
+#hotel-room-gallery h2,
+#testimonial h2,
+#hotel-room-desc h2,
+/* Mehana Page */
+#mehana-about-heading h2,
+#main-dish h2,
+#menu h2,
+/* Price page*/
+#our-rooms h2,
+#price-questions-form h2{
+	font-size: 31px;
+	margin-bottom: 20px;
+}
+
+/*============================
+========= PAGES HR ==========
+============================*/
+#chooseUs hr,
+#mehana-about-heading hr,
+#main-dish hr,
+#menu hr,
+#hotel-about-us hr,
+#testimonial hr,
+#hotel-room-gallery hr,
+#our-rooms hr,
+#price-table-heading hr,
+#price-questions-form hr,
+#reserve hr,
+#contact-form hr{
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #048C8C;
+    width: 5%;
+    margin-bottom: 10px;
+}
+
+/*======================================================================================
+================================== NAVIGATION =========================================
+======================================================================================*/
+#logo{
+	margin-top: 10px;
+	display: inline-block;
+	width: 35%;
+	text-align: right;
+}
+#logo h1 a{
+	color: white;
+	font-size: 42px;
+	font-weight: bold;
+}
+#logo p{
+	color: white;
+	font-size: 18px;
+}
+#main-nav{
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    overflow: visible !important;
+    z-index: 9998;
+   background: rgba(0, 0, 0, .1);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    border-bottom: 0;
+    padding-bottom: 20px;
+}
+#main-nav ul{
+	text-align: center;
+	width: 60%;
+	vertical-align: top;
+	display: inline-block;
+	margin-top: 25px;
+}
+#main-nav ul li{
+	display: inline-block;
+}
+#main-nav ul li a{
+	margin-right: 20px;
+	color: rgb(255, 255, 255);
+	font-size: 22px;
+	font-weight: bold;
+}
+#main-nav ul li a:hover{
+	font-size: 25px;
+	transition: 1s;
+}
+.icon a{
+	display: none;
+}
+
+/*======================================================================================
+================================== HOME PAGE =========================================
+======================================================================================*/
+
+/*============================
+=========== Cover ===========
+============================*/
+#cover{
+	background: url('assets/img/homecover5.jpeg')no-repeat;
+	background-position: 100% 70%;
+}
+#cover p{
+	color: white;
+	font-size: 22px;
+	margin-bottom: 40px;
+	text-shadow: -1px 0 #04818c, 0 1px #04818c, 1px 0 #04818c, 0 -1px #04818c;
+}
+.cover-button{
+	background: #04818c;
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 12px 40px;
+    margin-top: 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 18px;
+}
+.cover-button:hover{
+	opacity: 0.8;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.slider-button:focus{
+	outline: none;
+}
+
+/*============================
+=========== Choose Us ========
+============================*/
+#chooseUs{
+	text-align: center;
+	padding: 60px 20%;
+}
+#chooseUs h2{
+	text-align: center;
+}
+#chooseUs p{
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+	color: #62727e;
+	line-height: 20px;
+}
+
+/*============================
+=== HOME PAGE FOOD SECTION =
+============================*/
+#home-food-section{
+	background: #dee2e5;
+	padding: 40px 20%;
+	position: relative;
+}
+#home-food{
+	width: 63%;
+	display: inline-block;
+	vertical-align: top;
+	font-family: 'Open Sans', sans-serif;
+	color: #62727e;
+}
+#home-food p{
+	line-height: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+}
+#home-food-more{
+	margin-top: 10%;
+}
+#home-food a{
+	position: absolute;
+	bottom: 280px;
+}
+#home-food a,
+#home-hotel-section a{
+ 	background: #04818c;
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 12px 40px;
+    margin-top: 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 18px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: normal;
+}
+#home-food a:hover,
+#home-hotel-section a:hover{
+	opacity: 0.7;
+	transition: 1s;
+}
+#home-food-img{
+	display: inline-block;
+	width: 36%;
+	height: 100px;
+	text-align: center;
+}
+#home-food-img img{
+	width:100%;
+	height: 300px;
+}
+#home-food-slider .flexslider{
+	border: none;
+	margin-top: 20px;
+	background: #dddedf !important;
+}
+#home-food-slider ul li{
+	margin-right: 5px !important;
+}
+#home-food-slider ul li img{
+	height: 150px;
+}
+#home-food-slider .flex-control-nav{
+	display: none;
+}
+
+/*============================
+== HOME PAGE HOTEL SECTION ===
+============================*/
+#home-hotel-section{
+	height: 250px;
+	padding: 40px 20%;
+	color: #62727e;
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+}
+#home-hotel-desc{
+	display: inline-block;
+	width: 65%;
+	float: right;
+	line-height: 20px;
+}
+#home-hotel-desc p{
+	font-style: italic;
+}
+#home-hotel-img{
+	display: inline-block;
+	float: left;
+	width: 30%;
+}
+#home-hotel-desc a{
+	bottom: 40px;
+	position: absolute;
+}
+#home-hotel-img img{
+	width: 100%;
+	height: 250px;
+}
+
+/*======================================================================================
+================================== MAIN FOOTER =========================================
+======================================================================================*/
+#main-footer{
+	background: #292E31;
+	color: #6b7a7e;
+	padding: 0 20%;
+	text-align: center;
+}
+#main-footer h5{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+#main-footer .col{
+	width: 30%;
+	display:inline-block;
+	margin-right: 3%;
+	vertical-align: top;
+}
+#main-footer .col:last-child{
+	margin: 0 !important;
+}
+#main-footer ul li{
+	margin-bottom: 10px;
+}
+#main-footer ul li i{
+	margin-right: 10px;
+}
+#main-footer ul li a{
+	color: #6b7a7e;
+}
+#main-footer ul li a:hover{
+	color: white;
+	transition: 1s;
+}
+#footer-social ul i{
+	font-size: 24px;
+}
+#madeBy{
+	text-align: center;
+	height: 50px;
+}
+#madeBy hr{
+	opacity: 0.2;
+}
+
+/*======================================================================================
+================================= HOTEL PAGE ============================================
+======================================================================================*/
+
+/*============================
+======== Cover Section ========
+============================*/
+#hotel-cover{
+	background: url('assets/img/hotel111.png')no-repeat;
+	background-position: 70% 30%;
+}
+/*============================
+======== About Section =======
+============================*/
+#hotel-wrapper{
+	padding: 0 20%;
+}
+#hotel-about-us{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+#hotel-about-us h2,
+#hotel-room-gallery h2,
+#testimonial h2{
+	text-align: center;
+}
+#hotel-about-us p{
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+	color: #62727e;
+	line-height: 20px;
+}
+#hotel-room-gallery{
+	padding: 30px 0;
+}
+#hotel-room-gallery img{
+	width: 23%;
+	height: 200px;
+}
+.imagedropshadow {
+    padding: 5px;
+    border: solid 1px #EFEFEF;
+}
+a:hover img.imagedropshadow {
+	-webkit-filter: brightness(130%);
+    border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+}
+/*============================
+======== Room Section ========
+============================*/
+#hotel-room-section{
+	background: #dee2e5;
+	padding: 30px 20%;
+}
+#hotel-room-desc{
+	width: 60%;
+	display: inline-block;
+	vertical-align: top;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+	color: #62727e;
+	text-align: center;
+	margin-right: 3%;
+}
+#hotel-room-desc p{
+	line-height: 20px;
+}
+#hotel-room-desc a{
+	padding: 12px 40px;
+    -webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 2px solid #c8ced1;
+	background: #048C8C;
+    height: 54px;
+    color: white;
+    border: none;
+    box-shadow: none;
+    bottom: -40px;
+    position: relative;
+}
+#hotel-room-img{
+	display: inline-block;
+	width: 34%;
+	height: 100px;
+	text-align: center;
+}
+#hotel-room-img img{
+	width:100%;
+}
+/*============================
+======== Testimonials ========
+============================*/
+#testimonial{
+	padding: 40px 20%;
+}
+.testim-col{
+	vertical-align: top;
+	text-align: center;
+	display: inline-block;
+	width: 31%;
+	margin-right:2%; 
+}
+#testimonial img{
+	margin-top: 40px;
+	width: 150px;
+	height: 150px;
+	border: 4px double #c8ced1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+#testimonial img:hover{
+	border: 4px solid #048C8C;
+	transition: 1s;
+}
+#testimonial h5{
+	margin: 15px 0;
+	font-weight: bold;
+}
+#testimonial p{
+	font-style: italic;
+	color: #62727e;
+}
+
+/*======================================================================================
+================================== MEHANA PAGE ==========================================
+======================================================================================*/
+
+/*============================
+======== Cover Section =======
+============================*/
+#mehana-cover{
+	background: url('assets/img/mehanacover.jpg')no-repeat;
+	background-position: 70% 90%;
+}
+/*============================
+======== About Section ========
+============================*/
+#mehana-wrapper{
+	padding: 40px 20%;
+}
+#mehana-about{
+	text-align: center;
+}
+#mehana-about-heading h2,
+#main-dish h2,
+#menu h2{
+	text-align: center;
+}
+#mehana-about-desc p{
+	font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: #62727e;
+    line-height: 20px;
+}
+#mehana-about-desc{
+	margin-top: 40px;
+	display: inline-block;
+	width: 47%;
+	vertical-align: top;
+	margin-right: 20px;
+}
+#mehana-about-ul{
+	margin-top: 40px;
+	display: inline-block;
+	width: 47%;
+	vertical-align: top;
+}
+#mehana-about-ul ul li{
+	margin-bottom: 10px;
+	font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: #62727e;
+}
+#mehana-about-ul ul li p{
+	display: inline-block;
+	width: 90%;
+}
+#mehana-about-ul ul li i{
+	margin-right: 5%;
+	vertical-align: top;
+}
+/*============================
+========= Dish Section =======
+============================*/
+#main-dish{
+	padding: 40px 20%;
+	background: #dee2e5;
+}
+.dish{
+	margin-bottom: 10px;
+}
+.dish-desc{
+	margin-top: 40px;
+	display: inline-block;
+	width: 45%;
+	margin-right: 3%;
+	font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: #62727e;
+    line-height: 20px;
+    vertical-align:top;
+}
+.dish-desc:last-child{
+	margin-right: 0;
+	margin-left: 3%;
+}
+.dish-name{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.dish-img{
+	display: inline-block;
+	width: 45%;
+}
+.dish-img img{
+	width: 100%;
+	height: 300px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+/*============================
+======== Menu Section ========
+============================*/
+#menu{
+	padding: 40px 20%;
+	text-align: center;
+}
+#menu-desc{
+	font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: #62727e;
+    margin-bottom: 40px;
+}
+#menu ul{
+	display: inline-block;
+	width: 28%;
+	vertical-align: top;
+	text-align: center;
+}
+#menu ul li{
+	margin-bottom: 10px;
+}
+#menu ul li i{
+	margin-right: 10px;
+}
+#food-slider{
+	margin-top: 40px;
+}
+#food-slider img{
+	height: 150px;
+}
+#food-slider .flex-control-paging li a{
+	display: none;
+}
+
+/*======================================================================================
+================================== PRICE PAGE ==========================================
+======================================================================================*/
+
+/*============================
+======== Cover Section =======
+============================*/
+#prices-cover{
+	background: url('assets/img/i2.jpg')no-repeat;
+	background-position: 20%;
+}
+#prices-cover a{
+	background: #04818c;
+	color: white;
+	border: none;
+	box-shadow: none;
+	padding: 12px 40px;
+	margin-top: 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 18px;
+}
+#prices-cover a:hover{
+	background: #048c80;
+	transition: 1s;
+}
+/*============================
+====== Our Room Section =====
+============================*/
+#our-rooms{
+	text-align: center;
+	padding: 40px 15% 50px;
+}
+#our-rooms .image-row div{
+	display: inline-block;
+	width: 30%;
+	margin-right: 2%;
+}
+#our-rooms .image-row div:last-child{
+	margin-right: 0;
+}
+#our-rooms .image-row h4{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+#our-rooms .image-row img{
+	width: 100%;
+	height: 300px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 2px solid #048C8C;
+	-webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+#our-rooms .image-row img:hover{
+	 -webkit-transform: rotate(-2deg);
+     -moz-transform: rotate(-2deg);
+       -o-transform: rotate(-2deg);
+      -ms-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+}
+/*============================
+======== PRICE TABLE ========
+============================*/
+#price-table-wrapper{
+	padding-bottom: 50px;
+}
+#price-table-heading{
+	padding-top: 30px;
+	text-align: center;
+	font-size: 31px;
+	margin-bottom: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #515151;
+}
+#season{
+	height: 50px;
+}
+#season button{
+	margin-top: 30px;
+	border: none;
+	background: #fff;
+	color: #048C8C;
+	font-size: 18px;
+}
+#season button:hover{
+	cursor: pointer;
+	font-size: 20px;
+	transition: 1s;
+}
+#season button:focus{
+	outline: none;
+}
+.button-separator{
+	margin-bottom: -3px;
+	height: 15px;
+	background: #048C8C;
+	width: 2px;
+	display: inline-block;
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+#price-table{
+	margin-top: 40px;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+#price-table .active{
+	background: #048C8C !important;
+	color: white;
+}
+.active p{
+	color: white;
+}
+.active a{
+	color: white !important;
+}
+.active p:last-child a{
+	border: 1px solid white;
+}
+.active p:last-child a:hover{
+	background: #fff;
+	color: #048C8C !important;
+}
+.price-col{
+	display: inline-block;
+	width: 300px;
+	height: 420px;
+	border: 1px solid #c8ced1;
+	vertical-align: top;
+	margin-right: -4.8px;
+	background: #fff;
+}
+.price-col:nth-child(2){
+	height: 440px;
+	margin-top: -19px;
+	padding-top: 20px;
+}
+.price-col:last-child{
+	margin-right: -11px;
+}
+.price-col hr{
+	width: 50%;
+	color: gray;
+	opacity: 0.3;
+}
+.room-price{
+	font-weight: bold;
+	font-size: 34px;
+	margin-bottom: 15px;
+	margin-top: 30px;
+	color: #048C8C;
+}
+.room-type{
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #515151;
+}
+.room-desc{
+	padding: 9px 7px; 
+	color: #62727e;
+}
+.price-col p:last-child{
+	margin-top: 30px;
+}
+.book{
+	border: 2px solid #048C8C;
+	padding: 10px 40px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color: #048C8C;
+}
+.book:hover{
+	color: white;
+	background: #048C8C;
+	transition: 1s;
+}
+/*============================
+     Question Form Section
+============================*/
+#price-questions-form{
+		background: #dee2e5;
+		padding: 40px 10%;
+	}
+#price-questions-form h2{
+	text-align: center;
+}
+#price-questions-form form{
+	margin-left:10%;
+	margin-top: 40px;
+}
+#price-questions-form form input{
+	height: 45px;
+	width: 20%;
+	border:2px solid #c8ced1;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding-left: 20px;	
+	position: relative;
+	margin-right: 5px;
+}
+#price-questions-form form input[type=submit]{
+	width: 20%;
+	background: #048C8C;
+	height: 48px;
+	color: white;
+	border: none;
+	box-shadow: none;
+	padding-left: 0;
+}
+#price-questions-form form input[type=submit]:hover{
+	cursor: pointer;
+	opacity: 0.8;
+}
+.wpcf7-not-valid-tip{
+  display: none !important;
+}
+#price-questions-form div.wpcf7-validation-errors{
+ 	width: 85%;
+}
+#price-questions-form div.wpcf7-response-output{
+	text-align: center;
+	width: 83.8%;
+	border:2px solid #048C8C;
+	padding: 15px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0 !important;
+	margin-top: 20px !important;
+	color: #048C8C;
+}
+
+/*============================
+		RESERVE SECTION
+============================*/
+#reserve{
+	text-align: center;
+	font-size: 31px;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #515151;
+	padding-top: 40px;
+	padding-bottom: 50px;
+	background: #dee2e5;
+}
+#price-questions-form form input:focus,
+#reserve input:focus,
+#reserve select:focus,
+#contact-form-right input:focus,
+#contact-form textarea:focus{
+	border:1px solid #048C8C;
+	outline: none;
+}
+/*============================
+======= RESERVE FORM ========
+============================*/
+#reserve{
+	text-align: center;
+}
+#reserve form{
+	margin-top: 40px;
+}
+#reserve input{
+	height: 45px;
+	width: 200px;
+	border:2px solid #c8ced1;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding-left: 20px;	
+	position: relative;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+#reserve select{
+	height: 51px !important;
+	width: 224px;
+	border:2px solid #c8ced1;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding-left: 20px;
+	color: #a0a4a7;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+#reserve input[type=submit]{
+	width: 224px;
+	background: #048C8C;
+	height: 47px;
+	color: white;
+	border: none;
+	box-shadow: none;
+	right: -1px;
+	padding-left: 0;
+}
+
+#reserve input[type=submit]:hover{
+	transition: 1s;
+	cursor: pointer;
+	opacity: 0.8;
+}
+.reserve_row_3{
+	padding-left: 20px;
+}
+
+.ui-datepicker .ui-datepicker-header{
+	background: #048C8C;
+	color: white;
+}
+#reserve div.wpcf7-response-output{
+	text-align: center;
+	border:2px solid #048C8C;
+	padding: 15px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0 !important;
+	margin-top: 20px !important;
+	color: #048C8C;
+ 	width: 85%;
+ 	margin-left: 5% !important;
+}
+/*======================================================================================
+================================== CONTACT PAGE ========================================
+======================================================================================*/
+
+/*============================
+======== Cover Section ========
+============================*/
+#contact-cover{
+	background: url('assets/img/contactbg.png')no-repeat;
+	background-position: top;
+}
+#contact-cover a{
+	background: #04818c;
+	color: white;
+	border: none;
+	box-shadow: none;
+	padding: 12px 40px;
+	margin-top: 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 18px;
+}
+#contact-cover a:hover{
+	opacity: 0.8;
+	transition: 0.5s;
+}
+/*============================
+====== Services Section ======
+============================*/
+#contact-wrapper{
+	padding: 0 20%;
+}
+#contact-service{
+	text-align: center;
+	margin-top: 70px;
+}
+.conService{
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+.conService-icon{
+    -webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	height: 125px;
+	width: 125px;
+	border: 2px solid #048C8C;
+	margin: 0 auto;
+	display: table;
+	background: #048C8C;
+}
+.conService-icon:hover{
+	background: white;
+	transition: 1s;
+}
+.conService-icon a{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 42px;
+	color: white;
+}
+.conService-icon a:hover{
+	color: #048C8C;
+	transition: 1s;
+}
+.conService h5{
+	margin-top: 20px;
+	color: #048C8C;
+	font-size: 22px;
+	font-weight: bold;
+}
+/*============================
+======== Map Section ========
+============================*/
+#contact-map{
+	padding: 80px 0;
+}
+/*============================
+==== Contact Form Section ====
+============================*/
+#contact-form{
+	margin-bottom: 40px;
+}
+#contact-form h2{
+	text-align: center;
+	font-size: 38px;
+	margin-bottom: 20px;
+}
+#contact-form hr{
+	margin-bottom: 50px;
+}
+#contact-form-left{
+	width: 48%;
+	display: inline-block;
+	vertical-align: top;
+}
+.contact-type{
+	margin-bottom: 40px;
+}
+.contact-type-icon{
+	display: inline-block;
+	width: 14%;
+	vertical-align: top;
+}
+.contact-type-icon i{
+	font-size: 40px;
+	color: #048C8C;
+}
+.contact-type .fa-mobile{
+	font-size: 56px;
+	margin-left: 5px;
+}
+.contact-type .fa-map-marker{
+	margin-left: 5px;
+}
+.contact-type-desc{
+	width: 84%;
+	display: inline-block;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.contact-type-desc h3{
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+#contact-form-right{
+	width: 48%;
+	display: inline-block;
+}
+#contact-form-right input{
+	width: 100%;
+	height: 40px;
+	display: block;
+	border: none;
+	margin-bottom: 15px;
+	padding-left: 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border:1px solid #c8ced1;
+}
+#contact-form-right input[type=submit]{
+	width: 20%;
+	min-width: 100px;
+	background: #048C8C;
+	color: white;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	margin-top: 10px;
+}
+#contact-form-right input[type=submit]:hover{
+	cursor: pointer;
+	opacity: 0.8;
+	transition: 0.5s;
+}
+#contact-form-right textarea{
+	width: 100%;
+	padding-left: 10px;
+	padding-top: 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	height: 120px;
+	border:1px solid #c8ced1;
+}
+#contact-form-right div.wpcf7-response-output{
+	border:2px solid #048C8C;
+	padding: 15px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0 !important;
+	color: #048C8C;
+}
+
+/*======================================================================================
+================================== MEDIA ===============================================
+======================================================================================*/
+@media screen and (max-width: 1400px){
+	/* HOME PAGE */
+	#home-food-section,
+	#home-hotel-section{
+		  padding: 40px 10%;
+	}
+	/*MEHANA*/
+	#main-dish {
+	    padding: 40px 15%;
+	}
+	/* HOTEL PAGE*/
+	#hotel-room-desc a{
+		bottom: -30px;
+	}
+	#testimonial{
+		padding: 40px 15%;
+	}
+	/* PRICE PAGE */
+	#our-rooms{
+		text-align: center;
+		padding: 40px 10% 50px;
+	}
+	/* CONTACT PAGE */
+	#contact-wrapper{
+		padding: 0 10%;
+	}
+	#contact-service{
+		margin-top: 40px;
+	}
+	/* FOOTER */
+	#main-footer{
+	    padding: 0 9.5%;
+	}
+}
+@media screen and (max-width: 1300px){
+	/* HOME PAGE */
+	#home-food-section
+	#home-hotel-section,{
+		padding: 40px 5%;
+	}
+	#chooseUs,
+	/* MEHANA PAGE*/
+	#mehana-wrapper,
+	#main-dish,
+	#menu{
+	    padding: 40px 10%;
+	}
+	/* HOTEL PAGE */
+	#hotel-wrapper{
+		padding: 0 10%;
+	}
+	#hotel-room-section{
+		padding: 40px 10%;
+	}
+	#testimonial{
+		padding: 40px 9.6%;
+	}
+}
+@media screen and (max-width: 1200px){
+	/* NAV */
+	#main-nav ul{
+		text-align: right;
+	}
+	#main-nav ul li:last-child a{
+		margin-right: 0;
+	}
+	/* PRICE PAGE */
+	#our-rooms{
+		text-align: center;
+		padding: 40px 2% 50px;
+	}
+
+}
+@media screen and (max-width: 1150px){
+	/* NAV */
+	.icon a{
+		margin-top: 10px;
+		display: block !important;
+	}
+	#price-questions-form div.wpcf7-response-output{
+		margin-left: 10px !important;
+	}	
+}
+@media screen and (max-width: 1000px){
+	body{
+		overflow-x: hidden;
+	}
+	/* HOME PAGE */
+	#chooseUs,
+	#home-food-section,
+	#home-hotel-section,
+	/* MEHANA */
+	#mehana-wrapper,
+	#main-dish,
+	#menu,
+	#reserve{
+	    padding: 40px 5%;
+	}
+	#home-food{
+		width: 52%;
+		margin-right: 10px;
+	}
+	#home-food-img{
+		width: 46%;
+	}
+	/* HOTEL PAGE */
+	#hotel-wrapper{
+		padding: 0 5%;
+	}
+	#hotel-room-section{
+		padding: 40px 5%;
+	}
+	#hotel-room-img{
+		height: 125px;
+	}
+	#testimonial{
+		padding: 40px 2.3%;
+	}
+	/* PRICE PAGE */
+	.price-col{
+		width: 35%;
+		padding-bottom: 20px;
+	}
+	.price-col:last-child{
+		margin-top: 20px;
+		float: left;
+		margin-left: 15%;
+	}
+	.active{
+		height: 420px !important;
+		margin-top: 0 !important;
+		padding-top: 0 !important;
+	}
+	#our-rooms .image-row img{
+		height: 200px;
+	}	
+	/* CONTACT PAGE */
+	#contact-wrapper{
+		padding: 0 5%;
+	}
+	/* FOOTER */
+	#footer-social{
+		margin-right: 0 !important;
+	}
+}
+@media screen and (max-width: 850px){
+	/* HOME PAGE */
+	#home-food{
+		width: 100%;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		text-align: center;
+	}
+	#home-food-img{
+		width: 100%;
+		margin-top: 20px;
+	}
+	#home-food a{
+		right: 10%;
+	}
+	#home-hotel-section{
+		height: 520px;
+		position: relative;
+	}
+	#home-hotel-desc{
+		display: inline-block;
+		width: 100%;
+		float: none;
+		line-height: 20px;
+		text-align: center;
+	}
+	#home-hotel-desc div{
+		height: 200px;
+	}
+	#home-hotel-desc a{
+		bottom: 50px;
+		right: 40px;
+	}
+	#home-hotel-img{
+		margin-top: 20px;
+		float: none;
+		width: 100%;
+	}
+	#home-hotel-img img{
+		height: 300px;
+	}
+	/* MEHANA */
+	.dish-img img{
+		height: 250px;
+	}
+	.dish-desc{
+		margin-top: 0;
+	}
+	/* HOTEL PAGE */
+	#hotel-room-gallery img{
+		width: 47.9%;	
+	}
+	#hotel-room-section{
+		padding: 40px 5%;
+	}
+	#hotel-room-desc{
+		width: 100%;
+		margin-bottom: 80px;
+	}
+	#hotel-room-img{
+		width: 100%
+	}
+	.testim-col{
+		width: 100%;
+	}
+	#testimonial p{
+		padding: 0 20%;
+	}
+	/* PRICE PAGE */
+	#price-questions-form form input{
+		height: 45px;
+		width: 40%;
+		position: relative;
+		margin-right: 5px;
+		margin-bottom: 10px;
+	}
+	#price-questions-form form input[type=submit]{
+		width: 42.9%;
+		height: 50px;
+	}
+	#reserve{
+		padding: 40px 5%;
+	}
+	.reserve_row_1{
+		width: 46.5%;
+		display: inline-block;
+		margin-right: 10px !important;
+	}
+	.reserve_row_2{
+		width: 46.5%;
+		display: inline-block;
+	}
+	.reserve_row_1 input{
+		width: 95% !important;	
+	}
+	.reserve_row_2 select{
+		width: 95% !important;
+		margin-right: 0 !important;
+		display: block;
+		height: 50px !important;
+	}
+	.reserve_row_3{
+		margin-left: -10px !important;
+	}
+	.datepicker{
+		width: 91.2% !important;
+		margin-left: -20px;
+	}
+	#reserve-btn{
+		margin-top: 20px;
+		display: block;
+		width: 94.5% !important;
+		margin-left: 7px !important;
+	}
+
+}
+@media screen and (max-width: 848px){
+	/* NAV */
+	#logo h1 a{
+		font-size: 34px;
+	}
+	/* PRICE PAGE */
+	.price-col{
+		width: 40%;
+	}
+	.price-col:last-child{
+		margin-left: 10%;
+	}
+}
+@media screen and (max-width: 846px){
+	#price-questions-form div.wpcf7-response-output{
+		margin-left: -5px !important;
+	}	
+}
+
+@media screen and (max-width: 768px){
+	/* HOME PAGE */
+	#chooseUs,
+	#home-food-section,
+	#home-hotel-section,
+	/*MEHANA*/
+	#mehana-wrapper,
+	#menu{
+	    padding: 40px 2%;
+	}
+	.dish-desc {
+	    width: 100%;
+	    text-align: center;
+	}
+	.dish-img{
+		margin: 20px 0;
+		width: 100%;
+		text-align: center;
+	}
+	.dish-img img{
+		height: 400px;
+	}
+	#mehana-about-ul ul li i {
+	    margin-right: 2%;
+	}
+	/* HOTEL PAGE */
+	#hotel-wrapper{
+		padding: 0 2%;
+	}
+	#hotel-room-gallery img{
+		width: 47.5%;	
+	}
+	/* PRICE PAGE */
+	#our-rooms{
+		padding: 40px 15% 50px;
+	}
+	#our-rooms .image-row div{
+		width: 100%;
+	}
+	#our-rooms .image-row img{
+		height: 250px;
+	}
+	/* CONTACT PAGE */
+	#contact-wrapper{
+		padding: 0 3%;
+	}
+	#contact-wrapper hr{
+		width: 15%;
+	}
+	#contact-cover{
+		height: 650px;
+	}
+	.conService-icon{
+		height: 110px;
+		width: 110px;
+	}
+	.conService h5{
+		font-size:20px; 
+	}
+	.contact-type-icon{
+		width: 20%;
+	}
+	.contact-type-desc{
+		width: 75%;
+	}
+	/* FOOTER */
+	#main-footer{
+	    padding: 0 2%;
+	    text-align: center;
+	}
+	#footer-contact ul li{
+		text-align: center;
+	}
+	#footer-contact ul li i{
+		width: 100%;
+		margin: 10px 0;
+	}
+	#footer-contact ul li:first-child i{
+		display: none;
+	}
+
+}
+@media screen and (max-width: 730px){
+	/* PRICE PAGE */
+	.price-col{
+		margin: 0 auto;
+		width: 55%;
+		display: block;
+	}
+	.price-col:last-child{
+		float: none;
+		margin: 0 auto;
+	}
+	#season button{
+		font-size: 16px;
+	}
+	#season button:hover{
+		font-size: 18px;
+	}
+	.reserve_row_3{
+		margin-left: -8px !important;
+	}
+	#reserve-btn{
+		width: 95% !important;
+		margin-left: 0 !important;
+	}
+}
+@media screen and (max-width: 630px){
+	/*HOME*/
+	#home-hotel-section{
+		height: 550px;
+	}
+	#home-hotel-img{
+		height: 300px;
+		margin-top: 40px;
+	}
+	#home-hotel-desc a{
+		bottom: 60px;
+		right: 40px;
+	}
+
+	/* MEHANA */
+	.dish-img img{
+		height: 300px;
+	}
+	/*HOTEL PAGE*/
+	#hotel-room-gallery img{
+		width: 46%;	
+		height: 150px;
+	}
+	/*PRICE PAGE*/
+	#price-questions-form form input[type=submit]{
+		width: 45%;
+		height: 50px;
+	}
+	#reserve div.wpcf7-response-output{
+	 	margin-left: 2.5% !important;
+	}
+}
+@media screen and (max-width: 550px){
+	/* MEHANA */
+	#food-slider .flexslider{
+		margin-bottom:0;
+	}
+	/* PRICE PAGE */
+	#season button{
+		font-size: 14px;
+	}
+	#season button:hover{
+		font-size: 16px;
+	}
+	#our-rooms{
+		padding: 40px 10% 50px;
+	}
+	#price-questions-form form{
+		padding-left: 7%;
+	}
+	#price-questions-form form input{
+		text-align: center;
+		height: 45px;
+		width: 80%;
+		padding: 0;
+		margin-right: 5px;
+	}
+	#price-questions-form form input[type=submit]{
+		height: 50px;
+		width: 81%;
+	}
+	#price-questions-form div.wpcf7-response-output{
+		margin-left: -20px !important;
+	}
+}
+@media screen and (max-width: 480px){
+	#home-hotel-section{
+		height: 570px;
+	}
+	#home-hotel-desc div{
+		height: 220px;
+	}
+	#home-hotel-desc a{
+		bottom: 65px;
+	}
+	/* MEHANA */
+	#menu ul{
+		width: 30%;
+	}
+	#mehana-about-desc{
+		width: 45%;
+	}
+	#mehana-about-ul ul li p{
+		width: 88%;
+	}
+	/* PRICE PAGE */
+	.price-col{
+		width: 65%;
+	}
+	#season{
+		margin-top: 20px;
+	}
+	#season button{
+		font-size: 16px;
+		width: 100%;
+		margin-top: 5px;
+		font-weight: bold;
+	}
+	#season button:hover{
+		font-size: 16px;
+	}
+	.button-separator{
+		display: none;
+	}
+	.reserve_row_3{
+		margin-left: -5px !important;
+	}
+	.datepicker{
+		width: 92.8% !important;
+	}
+	#reserve-btn{
+		width: 98.5% !important;
+		margin-left: -12px !important;
+	}
+	/* CONTACT PAGE */
+	#contact-cover{
+		height: 690px;
+	}
+	.conService-icon{
+		height: 90px;
+		width: 90px;
+	}
+	#contact-map{
+		padding: 40px 0;
+	}
+	#contact-form-left{
+		width: 100%;
+	}
+	#contact-form-right{
+		width: 98%;
+	}
+	/* FOOTER */
+	#main-footer .col{
+	    width: 100%;
+	}
+	#main-footer .col h5{
+		margin: 15px 0;
+	}
+	
+}
+
+

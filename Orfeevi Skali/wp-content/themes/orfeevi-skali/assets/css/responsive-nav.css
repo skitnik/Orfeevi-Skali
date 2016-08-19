@@ -1,0 +1,79 @@
+/*! responsive-nav.js 1.0.39 by @viljamis */
+
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+/*cc*/
+.nav-collapse li{
+  display: inline-block;
+}
+
+.nav-toggle{
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  color: white;
+  font-size: 40px;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 999px) {
+  #logo{
+    width: 100%;
+    text-align: center;
+  }
+  .nav-collapse{
+    margin-left: 20%;
+  }
+  .nav-collapse li{
+    width: 100%;
+    text-align: center;
+  }
+  .nav-collapse li a{
+    margin-right: 0 !important;
+  }
+}
+@media screen and (min-width: 1000px) {
+
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .nav-toggle{
+    font-size: 30px;
+    right: 10px;
+    top: 25px;
+  }
+}
