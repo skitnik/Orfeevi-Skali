@@ -1,0 +1,15 @@
+git status 
+
+git config --global user.email "dskitnik@gmail.com"
+git config --global user.name "skitnik"
+git add *
+git commit -m "{some comment here}"
+git push
+
+
+1.git init  \\ In the directory
+  2.git clone {url}  \\ GET THE REPO
+3.git add *
+4.git commit -m ""
+5.git remote add origin {https://github.com/skitnik/Orfeevi-Skali.git}
+6.git push -u origin master
